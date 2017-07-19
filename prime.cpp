@@ -1,14 +1,36 @@
 #include<stdio.h>
 int main()
 {
-    int i, j;
+    int i, j, maxNum;
+    printf("Fiding Prime Numbers!!\n");
+
     
-    for(i=1;i<=10;i++)
-    {
-        for (j = 1;j<=10;j++)
-        {
-            printf("%d\t", j);
+    do{
+        printf("Enter an integer (bigger than 2): ");
+        scanf("%d",&maxNum);
+        if(maxNum<2){
+            printf("Invalid Value\n");
         }
-        printf("\n");
+        for(i=2;i<=maxNum;i++)
+        {
+            for (j = 2; j<=i;j++)
+            {
+                if (i%j==0) {
+                    break;
+                }
+            }
+            if (i==j){
+                printf("%d is a Prime Number \n",i);
+            }
+            
+        }
+
     }
+    while (maxNum<2);
+
+    
+
+
+    
+
 }
